@@ -3,7 +3,9 @@ export function useMovies(query) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const KEY = "f84fc31d";
+
+  const KEY = `${process.env.REACT_APP_API_KEY}`;
+
   useEffect(
     function () {
       const controller = new AbortController();
